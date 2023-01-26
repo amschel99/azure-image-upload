@@ -15,10 +15,7 @@ const App = () => {
   const[azureStatus,setAzureStatus]=React.useState('')
   const[urls,setUrls]=React.useState([])
   const[files,setFiles]=React.useState(null)
-  const [images,setImages]=React.useState([])
-  React.useEffect(()=>{
-setImages(urls)
-  },[urls])
+
   return (
   <div style={{marginTop:'0'}}>
   <div style={{marginBottom:"15px"}}>
