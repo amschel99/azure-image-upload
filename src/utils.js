@@ -2,7 +2,7 @@
 import { BlobServiceClient} from "@azure/storage-blob"
 
 
-const sasToken="YOUR_SAS_TOKEN"
+const sasToken=import.meta.env.VITE_SAS_URL
 const blobServiceClient = new BlobServiceClient(
  `${sasToken}`
 );
@@ -11,7 +11,7 @@ let blobUrl;
 let blockBlobClient;
 export const  uploadBlob=  async (files)=>{
   try{
-    const containerClient=  blobServiceClient.getContainerClient("cars")
+    const containerClient=  blobServiceClient.getContainerClient(import.meta.env.VITE_CONTAINER)
         const promises = [];
         let urls=[]
         for (const file of files) {
